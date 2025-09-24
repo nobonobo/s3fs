@@ -1,0 +1,14 @@
+version: '3.8'
+tasks:
+  build:
+    cmds:
+      - go build -o ./build/s3mount{{exeExt}} ./cmd/s3mount
+    sources:
+      - ./**/*.go
+    generates:
+      - ./build/s3mount{{exeExt}}
+  install:
+    cmds:
+      - go install ./cmd/s3mount
+    sources:
+      - ./**/*.go
